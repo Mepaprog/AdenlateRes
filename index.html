@@ -64,25 +64,6 @@
   <script>
     const button = document.getElementById('moving-button');
 
-
-    button.addEventListener('mouseenter', () => {
-        moveButton();
-    });
-
-    function moveButton() {
-        const maxX = window.innerWidth - button.offsetWidth;
-        const maxY = window.innerHeight - button.offsetHeight;
-
-        const randomX = Math.random() * maxX;
-        const randomY = Math.random() * maxY;
-
-        button.style.transform = `translate(${randomX}px, ${randomY}px)`;
-
-        button.addEventListener('mouseleave', () => {
-            button.style.transform = 'translate(0, 0)';
-        });
-    }
-
     function changePos(){
 
       const randomX = Math.random() * 200;
