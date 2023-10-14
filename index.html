@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: pink;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    main{
+      border: 1px solid;
+      width: 400px;
+      height: 350px;
+    }
+    main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+      background-color: crimson;
+      border-style:groove;
+    }
+    .Text{
+      height: 45%;
+      text-align: center;
+      font-size: xx-large;
+      color: white;
+    }
+    .buttons>a>button{
+      width: 100px;
+      height: 40px;
+      border-radius: 10px;
+      border: 0;
+      font-size: large;
+      font-weight:lighter;
+      font-style:italic;
+      box-shadow: 5px 3px 1px rgba(10,10,10,0.5);
+    }
+  /**/
+  </style>
+</head>
+<body>
+  <br><br><br><br>
+  <main><br><br><br><br>
+    <div class="Text">
+      <font>Hi Mrs.</font><br>
+      <font>Bati Na Tayo</font>
+    </div>
+    <div class="buttons">
+      <a href="yes.html"><button onclick="yes()"><font>Yes</font></button></a>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a>
+        <button id="moving-button" onclick="changePos()"><font style="color: red;">No</font></button>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    const button = document.getElementById('moving-button');
+
+
+    button.addEventListener('mouseenter', () => {
+        moveButton();
+    });
+
+    function moveButton() {
+        const maxX = window.innerWidth - button.offsetWidth;
+        const maxY = window.innerHeight - button.offsetHeight;
+
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        button.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translate(0, 0)';
+        });
+    }
+
+    function changePos(){
+
+      const randomX = Math.random() * 200;
+      const randomY = Math.random() * 200;
+
+      button.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+    }
+  </script>
+</body>
+</html>
